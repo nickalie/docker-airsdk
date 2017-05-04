@@ -1,0 +1,5 @@
+.git
+.idea
+*.iml
+template/flash/build
+template/java/build

@@ -1,0 +1,22 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath group: 'org.gradlefx', name: 'gradlefx', version: '1.4.0'
+    }
+}
+
+apply plugin: 'gradlefx'
+
+type = 'swc'
+srcDirs = ['src']
+playerVersion = '25.0'
+
+afterEvaluate {
+    dependencies {
+        external files("${flexHome}/frameworks/libs/air/airglobal.swc")
+    }
+}
+
+additionalCompilerOptions = ['-swf-version=24']
